@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2</title>
+	<meta charset="utf-8" />
+    <script>
+        function calcular(){
+            var total = 12000;
+            if (document.form1.tipo_motor[0].checked){
+                total = total;
+            }
+            else if (document.form1.tipo_motor[1].checked){
+                total += 1500;
+                if (document.form1.tipo_puerta[0].checked){
+                    alert ("La opcion de 3 puertas solo esta disponible para Gasolina");
+                    return 0;
+                }
+            }
+            else {
+                total += 3000;
+                if (document.form1.tipo_puerta[0].checked){
+                    alert ("La opcion de 3 puertas solo esta disponible para Gasolina");
+                    return 0;
+                }   
+            }
+
+            if (document.form1.tipo_puerta[0].checked){
+                total -= 2000;
+            }
+            else if (document.form1.tipo_puerta[1].checked){
+                total = total;
+            }
+            else{
+                total += 1500;
+            }
+
+            if (document.form1.tipo_pintura[0].checked){
+                total = total;
+            }
+            else if (document.form1.tipo_pintura[1].checked){
+                total = total;
+            }
+            else if (document.form1.tipo_pintura[2].checked){
+                total = total;
+            }
+            else if (document.form1.tipo_pintura[3].checked){
+                total -= 500;
+            }
+            else {
+                total -= 600;
+            }
+
+            if (document.form1.metalizada.checked){
+                total += 750;
+                if (document.form1.tipo_pintura[3].checked || document.form1.tipo_pintura[4].checked){
+                    alert ("La opcion metalizada solo esta disponible para ROJO, VERDE o NARANJA");
+                    return 0;
+                }
+            }
+
+            if (document.form1.llantas.checked){
+                total += 200;
+            }
+
+            if (document.form1.climatizador.checked){
+                total += 800;
+            }
+
+            if (document.form1.gps.checked){
+                total += 340;
+            }
+
+            if (document.form1.dvd.checked){
+                total += 800;
+                if (document.form1.tipo_puerta[0].checked || document.form1.tipo_puerta[1].checked){
+                    alert ("La opcion de DVD solo esta disponivle en el modelo FAMILIAR.");
+                    return 0;
+                }
+            }
+
+            alert("El precio final es "+total+"€");
+        }
+    </script>
+
+</head>
+<body>
+    
+    <form name="form1">
+        <fieldset>
+            Configuracion del Coche
+        </fieldset>
+        
+        <fieldset>
+            Tipo de Motor <br>
+            <input type="radio" name="tipo_motor" id="tipo_motor" >Gasolina
+            <input type="radio" name="tipo_motor" id="tipo_motor" >Diesel (+1500€)
+            <input type="radio" name="tipo_motor" id="tipo_motor" >Hibrido (+3000€)
+        </fieldset>
+        
+        <fieldset>
+            Tipo de Puertas<br>
+            <input type="radio" name="tipo_puerta" id="tipo_puerta" >3 Puertas (-2000€)(Solo en Gasolina)
+            <input type="radio" name="tipo_puerta" id="tipo_puerta" >5 Puertas
+            <input type="radio" name="tipo_puerta" id="tipo_puerta" >Familiar (+1500€)
+        </fieldset>
+
+        <fieldset>
+            Tipo de Pintura<br>
+            <input type="radio" name="tipo_pintura" id="tipo_pintura" >Rojo
+            <input type="radio" name="tipo_pintura" id="tipo_pintura" >Verde
+            <input type="radio" name="tipo_pintura" id="tipo_pintura" >Naranja
+            <input type="radio" name="tipo_pintura" id="tipo_pintura" >Blanco (-500€)
+            <input type="radio" name="tipo_pintura" id="tipo_pintura" >Negro (-600€)
+        </fieldset>
+         
+        <fieldset>
+            Seleccionar las que se deseen:<br>
+            <input type="checkbox" name="metalizada" id="metalizada">Metalizada (+750€) (Solo Rojo, Verde o Naranja)<br>
+            <input type="checkbox" name="llantas" id="llantas">Llantas (+200€)<br>
+            <input type="checkbox" name="climatizador" id="climatizador">Climatizador (+800€)<br>
+            <input type="checkbox" name="gps" id="gps">GPS (+340€)<br>
+            <input type="checkbox" name="dvd" id="dvd">DVD (+800€)(Solo modelo Familiar)
+        </fieldset>
+        
+        <fieldset>
+            Total a Cobrar<br>
+            <button onclick="calcular()">Calcular</button>
+        </fieldset>
+
+    </form>
+
+</body>
+</html>

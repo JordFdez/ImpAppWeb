@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 3</title>
+	<meta charset="utf-8" />
+    <style>
+        div{
+            background-color: rgba(218, 218, 214, 0.879);
+        }
+
+    </style>
+
+    <script>
+
+        function enviar(){
+            var verdadera= true;
+            var contador=0;
+
+            if (document.form1.primera[0].checked || document.form1.primera[1].checked ){
+                verdadera=false;
+            }
+            else if ((!document.form1.primera[0].checked) && (!document.form1.primera[1].checked) && (!document.form1.primera[2].checked)){
+                verdadera=false;
+            }
+            else{
+                verdadera=true;
+                contador ++;
+            }
+
+            if (document.form1.segunda[0].checked || document.form1.segunda[1].checked ){
+                verdadera=false;
+            }
+            else if (!document.form1.segunda[0].checked && !document.form1.segunda[1].checked && !document.form1.segunda[2].checked){
+                verdadera=false;
+            }
+            else{
+                verdadera=true;
+                contador ++;
+            }
+
+            if (document.form1.tercera[1].checked || document.form1.tercera[2].checked ){
+                verdadera=false;
+            }
+            else if (!document.form1.tercera[0].checked && !document.form1.tercera[1].checked && !document.form1.tercera[2].checked){
+                verdadera=false;
+            }
+            else{
+                verdadera=true;
+                contador ++;
+            }
+
+            if (document.form1.cuarta[0].checked || document.form1.cuarta[2].checked ){
+                verdadera=false;
+            }
+            else if (!document.form1.cuarta[0].checked && !document.form1.cuarta[1].checked && !document.form1.cuarta[2].checked){
+                verdadera=false;
+            }
+            else{
+                verdadera=true;
+                contador ++;
+            }
+
+            alert(+contador+"/4")
+        }
+
+    </script>
+
+</head>
+<body>
+    <form name="form1">
+    <div>
+        <p>1.- Conducir, con un permiso de la clase B, un turismo
+            que arrastra un remolque ligero, ¿está permitido?</p>
+            Seleccione una:
+        <dl>
+            <dt><input type="radio" name="primera" id="primera"> a.- Sólo si la masa maxima autorizada del vehiculo no supera los 3500 kg.</dt>
+            <dt><input type="radio" name="primera" id="primera"> b.- No, en ningun caso.</dt>
+            <dt><input type="radio" name="primera" id="primera"> c.- Sí, en cualquier caso.</dt>
+        </dl>
+    </div>
+
+    <div>
+        <p>2.- Un vehiculo que circula entre la salida y la puesta de sol, 
+            ¿debe llevar iluminadas las placas de matricula?</p>
+            Seleccione una:
+            <dl>
+            <dt><input type="radio" name="segunda" id="segunda"> a.- Sólo la delantera.</dt>
+            <dt><input type="radio" name="segunda" id="segunda"> b.- Sí, tanto delantera como la trasera.</dt>
+            <dt><input type="radio" name="segunda" id="segunda"> c.- Sólo la trasera.</dt>
+        </dl>
+    </div>
+
+    <div>
+        <p> 3.- Arrojar un cigarro por la ventanilla de un turismo,
+            ¿puede suponer una infraccion?</p>
+            Seleccione una:
+        <dl>
+            <dt><input type="radio" name="tercera" id="tercera"> a.- Sí, y ademas conlleva perdida de puntos.</dt>
+            <dt><input type="radio" name="tercera" id="tercera"> b.- Sí, pero no conlleva perdida de puntos.</dt>
+            <dt><input type="radio" name="tercera" id="tercera"> c.- No, pero no se debe hacer.</dt>
+        </dl>
+    </div>
+
+    <div>
+        <p> 4.- Hablar por un telefono con dispositivo de manos libres durante la condiccion...</p>
+        Seleccione una:
+        <dl>
+            <dt><input type="radio" name="cuarta" id="cuarta"> a.- Permite mantener sin riesgo largas conversaciones al volante.</dt>
+            <dt><input type="radio" name="cuarta" id="cuarta"> b.- Tiene un cierto riesgo debido a la perdida de atencion.</dt>
+            <dt><input type="radio" name="cuarta" id="cuarta"> c.- Esta prohibido.</dt>
+        </dl>
+    </div>
+    </form>
+
+    <button onclick="enviar()" >Enviar</button>
+</body>
+</html>
+
+ 

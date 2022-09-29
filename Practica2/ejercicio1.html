@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1</title>
+	<meta charset="utf-8" />
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #nuevo_texto{
+            font-family: Verdana;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="div1" id="div" >
+        <p id="nuevo_texto">Este es el contenido del div1</p>
+    </div>
+    <button onclick="texto()"> Cambiar texto </button><br>
+    <button onclick="fondo()"> Cambiar color de fondo </button><br>
+    <button onclick="letra()"> Cambiar tipo y color de letra </button><br>
+
+    <script>
+        function texto(){
+            var texto = prompt("Introduzca el texto: ");
+            document.getElementById("nuevo_texto").innerHTML = "<p>"+texto+"</p>";
+        }
+        
+        function fondo(color){
+            var color = prompt("Introduzca el color: ");
+            document.getElementById("div").style.backgroundColor=color;
+        }
+
+        function letra(){
+            var tipo_letra = prompt("Introduce el tipo de letra: ");
+            var color_letra = prompt("Introduce el color de la letra: ");
+
+            document.getElementById("nuevo_texto").style.fontFamily=tipo_letra;
+            document.getElementById("nuevo_texto").style.color=color_letra;
+            
+        }
+    </script>
+</body>
+</html>
