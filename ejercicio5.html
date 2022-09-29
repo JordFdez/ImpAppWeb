@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 5</title>
+	<meta charset="utf-8" />
+    <style>
+        table{
+            border-style: solid;
+            border-color: black;
+        
+        }
+
+
+
+
+    </style>
+    <script>
+
+        
+        function plus(){
+            var plus = "+"
+            document.getElementById("pantalla").value = plus
+        }
+        function igual(){
+            var igual = "="
+            document.getElementById("pantalla").value = igual
+
+            
+        }
+        function numero(aa){
+            result = aa
+            document.getElementById("pantalla").value = result;
+
+            result1 = ab
+            document.getElementById("pantalla").value = result1
+
+
+            total = result + result1
+            document.getElementById("resultado").value = total
+
+            
+        }
+
+    </script>
+
+</head>
+<body>
+    <form name="form1" id="form1">
+    <table border="5">
+        <tr>
+            <td colspan="2"><input type="text" id="pantalla" name="pantalla" size="4"></td>
+            <td colspan="2"><input type="text" id="resultado" name="resultado" size="4"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" onclick="numero('1')" value="1" ></td>
+            <td><input type="button" onclick="numero('2')" id="dos" value="2" ></td>
+            <td><input type="button" id="tres" onclick="numero('3')" value="3" ></td>
+            <td><input type="button" id="mas" onclick="plus()" value="+" ></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" id="cuatro" onclick="numero('4')" value="4" ></td>
+            <td><input type="button" id="cinco" onclick="numero('5')" value="5" ></td>
+            <td><input type="button" id="seis" onclick="numero('6')" value="6" ></td>
+            <td><input type="button" id="menos" value="-" ></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" id="siete" onclick="numero('7')" value="7" ></td>
+            <td><input type="button" id="ocho" onclick="numero('8')" value="8" ></td>
+            <td><input type="button" id="nuevo" onclick="numero('9')" value="9" ></td>
+            <td><input type="button" id="x" value="x" ></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" id="clear" value="c" ></td>
+            <td><input type="button" id="cero" onclick="numero('0')" value="0" ></td>
+            <td><input type="button" id="igual" onclick="igual()" value="=" ></td>
+            <td><input type="button" id="division" value="/" ></td>
+        </tr>
+
+    </table>
+    </form>
+</body>
+</html>
